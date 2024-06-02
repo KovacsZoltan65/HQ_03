@@ -36,7 +36,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
     // BOOKS
     // ------------
     Route::post('/getBooks', [App\Http\Controllers\BookController::class, 'getBooks'])->name('getBooks');
-    Route::post('/upload-books', [BookController::class, 'upload'])->name('upload-books');
+    Route::post('/upload-books', [App\Http\Controllers\BookController::class, 'upload'])->name('upload-books');
     Route::resource('books', App\Http\Controllers\BookController::class)
     ->names([
           'index' => 'books',

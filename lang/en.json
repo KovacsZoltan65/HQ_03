@@ -154,6 +154,7 @@
     "books_deleted": "Book deleted",
     "books_delete_confirmation": "Are you sure you want to delete this Book?",
     "books_search_placeholder": "Search the books by title or author...",
+    "books_not_found": "The book you are looking for cannot be found",
 
     "subdomains": "Subdomains",
     "subdomains_description": "Open subdomains page! Here you can list, create, update or delete a subdomains!",
@@ -172,7 +173,7 @@
     "subdomains_restore": "Restore Subdomain",
     "subdomains_restored": "Subdomain Restored",
     "subdomains_delete_confirmation": "Are you sure you want to delete this subdomain?",
-    "subdomains_search_placeholder": "",
+    "subdomains_search_placeholder": "Search subdomains by name or url...",
     
     "companies": "Companies",
 

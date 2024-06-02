@@ -133,7 +133,7 @@
     "users_updated": "Felhasználó frissítve",
     "users_delete": "Felhasználó törlése",
     "users_deleted": "Felhasználó törölve",
-    "users__delete_confirmation": "Biztosan törli ezt a felhasználót?",
+    "users_delete_confirmation": "Biztosan törli ezt a felhasználót?",
     "users_search_placeholder": "Keress a könyvek között név vagy email szerint...",
 
     "team": "Csoport",
@@ -154,6 +154,7 @@
     "books_deleted": "A könyv törölve",
     "books_delete_confirmation": "Biztosan törli ezt a könyvet?",
     "books_search_placeholder": "Keress a könyvek között cím vagy szerző szerint...",
+    "books_not_found": "A keresett könyv nem található",
 
     "subdomains": "Aldomainek",
     "subdomains_description": "Nyílvántartott aldomainek oldala! Itt listázhat, létrehozhat, frissíthet vagy törölhet aldomaineket!",
