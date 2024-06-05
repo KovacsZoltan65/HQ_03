@@ -15,22 +15,96 @@ class SubdomainController extends Controller {
 
     private $repository;
 
+    /**
+     * SubdomainController konstruktor.
+     *
+     * @param SubdomainRepositoryInterface $repository Az aldomain modell tárháza.
+     */
     public function __construct(SubdomainRepositoryInterface $repository) {
+        // Az altartomány-modell tárháza bekerül a konstruktorba.
+        // A SubdomainController ezt a tárolót fogja használni a CRUD műveletek 
+        // végrehajtására az altartományi modellen.
         $this->repository = $repository;
 
-        $this->middleware('can:subdomain list', ['only' => ['index', 'show']]);
-        $this->middleware('can:subdomain create', ['only' => ['create', 'store']]);
-        $this->middleware('can:subdomain edit', ['only' => ['edit', 'update']]);
-        $this->middleware('can:subdomain destroy', ['only' => ['destroy']]);
-        $this->middleware('can:subdomain restore', ['only' => ['restore']]);
+        /**
+         * A middleware beállítása, hogy csak akkor engedélyezze a "subdomain list"
+         * jogosultságú felhasználók számára a "index" és "show" metódusok
+         * elérését, ha a felhasználó rendelkezik ezzel a jogosultsággal.
+         * 
+         * A "only" kulcsszó használatával csak ezeket a metódusokat szűrjük ki ebből
+         * a middleware-ből, és a "can" middleware-t csak ezekre azokat alkalmazza.
+         * 
+         * Továbbá a middleware-t az alábbi kód sorban állítjuk be, hogy a konstruktor
+         * végén végrehajtsa a middleware-t.
+         */
+        $this->middleware('can:subdomain list', [
+            'only' => ['index', 'show'],
+        ]);
+
+        /**
+         * A middleware beállítása, hogy csak akkor engedélyezze a "subdomain create"
+         * jogosultságú felhasználók számára a "create" és "store" metódusok
+         * elérését, ha a felhasználó rendelkezik ezzel a jogosultsággal.
+         * 
+         * A "only" kulcsszó használatával csak ezeket a metódusokat szűrjük ki ebből
+         * a middleware-ből, és a "can" middleware-t csak ezekre azokat alkalmazza.
+         */
+        $this->middleware('can:subdomain create', [
+            'only' => ['create', 'store'],
+        ]);
+
+        /**
+         * A middleware beállítása, hogy csak akkor engedélyezze a "subdomain edit"
+         * jogosultságú felhasználók számára a "edit" és "update" metódusok
+         * elérését, ha a felhasználó rendelkezik ezzel a jogosultsággal.
+         * 
+         * A "only" kulcsszó használatával csak ezeket a metódusokat szűrjük ki ebből
+         * a middleware-ből, és a "can" middleware-t csak ezekre azokat alkalmazza.
+         */
+        $this->middleware('can:subdomain edit', [
+            'only' => ['edit', 'update'],
+        ]);
+
+
+        /**
+         * A middleware beállítása, hogy csak akkor engedélyezze a "subdomain destroy"
+         * jogosultságú felhasználók számára a "destroy" metódust
+         * elérését, ha a felhasználó rendelkezik ezzel a jogosultsággal.
+         * 
+         * A "only" kulcsszó használatával csak ezeket a metódusokat szűrjük ki ebből
+         * a middleware-ből, és a "can" middleware-t csak ezekre azokat alkalmazza.
+         * 
+         */
+        $this->middleware('can:subdomain destroy', [
+            'only' => ['destroy'],
+        ]);
+
+
+       /**
+         * A middleware beállítása, hogy csak akkor engedélyezze a "subdomain restore"
+         * jogosultságú felhasználók számára a "restore" metódust
+         * elérését, ha a felhasználó rendelkezik ezzel a jogosultsággal.
+         * 
+         * A "only" kulcsszó használatával csak ezt a metódust szűrjük ki ebből
+         * a middleware-ből, és a "can" middleware-t csak erre azokat alkalmazza.
+        */
+        $this->middleware('can:subdomain restore', [
+            'only' => ['restore'],
+        ]);
     }
 
     /**
-     * Display a listing of the resource.
+     * Jelenítse meg az erőforrás listáját.
      */
     public function index() {
-        return Inertia::render('Subdomains/SubdomainsIndex', [
-                'can' => $this->_getRoles(),
+        /**
+         * Jelenítse meg az Aldomains/SubdomainsIndex nézetet, és adja át neki a szerepkörök adatait.
+         *
+         * @return \Inertia\Response The rendered view.
+         */
+        return Inertia::render('Subdomains/Index', [
+            // A szerepkörök adatait a rendszer átadja a nézetnek.
+            'can' => $this->_getRoles(),
         ]);
     }
 
