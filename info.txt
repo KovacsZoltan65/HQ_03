@@ -95,6 +95,18 @@ Aktuális nyelv lekérése:
     import { getActiveLanguage } from 'laravel-vue-i18n';
     const lang = getActiveLanguage(); // en
 
+
+// ---------------------------------------
+// laravel activity log
+// ---------------------------------------
+https://spatie.be/docs/laravel-activitylog/v4/introduction
+https://www.youtube.com/watch?v=j6FB5WelWZY&t=426s
+
+php artisan vendor:publish --provider="Spatie\Activitylog\ActivitylogServiceProvider" --tag="activitylog-migrations"
+php artisan migrate
+php artisan vendor:publish --provider="Spatie\Activitylog\ActivitylogServiceProvider" --tag="activitylog-config"
+
+
 // ---------------------------------------
 // MIGRATIONS TO MYSQL
 // ---------------------------------------
