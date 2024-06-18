@@ -63,7 +63,7 @@
             </div>
 
             <div class="mt-4">
-                <InputLabel for="password_confirmation" :value="$t('password_confirmation" />
+                <InputLabel for="password_confirmation" :value="$t('password_confirmation')" />
                 <TextInput
                     id="password_confirmation"
                     v-model="form.password_confirmation"
