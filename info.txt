@@ -102,10 +102,11 @@ Aktuális nyelv lekérése:
 https://spatie.be/docs/laravel-activitylog/v4/introduction
 https://www.youtube.com/watch?v=j6FB5WelWZY&t=426s
 
+composer require spatie/laravel-activitylog
 php artisan vendor:publish --provider="Spatie\Activitylog\ActivitylogServiceProvider" --tag="activitylog-migrations"
 php artisan migrate
 php artisan vendor:publish --provider="Spatie\Activitylog\ActivitylogServiceProvider" --tag="activitylog-config"
-
+php artisan activitylog:clean
 
 // ---------------------------------------
 // MIGRATIONS TO MYSQL
