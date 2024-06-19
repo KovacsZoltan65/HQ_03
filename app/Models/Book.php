@@ -14,16 +14,55 @@ class Book extends Model
         SoftDeletes,
         LogsActivity;
 
-    protected $fillable = ['title', 'author', 'image',];
-    protected static $logAttributes = ['title', 'author', 'image',];
-    protected static $recordEvents = ['inserted', 'updated', 'deleted'];
+    /**
+     * A tömegesen hozzárendelhető attribútumok.
+     *
+     * @var array<string>
+     */
+    protected $fillable = [
+        'title',  // A könyv címe
+        'author', // A könyv szerzője
+        'image',  // A könyv képe
+    ];
     
+    /**
+     * A tevékenység naplózásakor naplózott attribútumok.
+     *
+     * @var array<string>
+     */
+    protected static $logAttributes = [
+        'title',  // A könyv címe
+        'author', // A könyv szerzője
+        'image',  // A könyv képe
+    ];
+    
+    /**
+     * A tevékenységnaplózást kiváltó esemény(ek).
+     *
+     * @var array<string>
+     */
+    protected static $recordEvents = [
+        'inserted', // Új könyv beillesztésekor
+        'updated',  // Amikor egy meglévő könyvet frissítenek
+        'deleted',  // Amikor egy könyvet törölnek
+    ];
+
+    /**
+     * A getActivitylogOptions metódus felülbírálása
+     * 
+     * Ezzel a módszerrel konfigurálhatóak a tevékenységnapló naplózási beállításai.
+     * A tevékenységi napló létrehozásakor vagy frissítésekor hívják meg.
+     *
+     * @return LogOptions
+     */
     #[\Override]
-    public function getActivitylogOptions(): LogOptions {
-        return LogOptions::defaults()->logOnly( self::$logAttributes );
-    }
-    
-    public function user(){
-        return $this->belongsTo(User::class);
+    public function getActivitylogOptions(): LogOptions
+    {
+        // Állítsa be az alapértelmezett naplózási beállításokat
+        return LogOptions::defaults()
+            // Naplózza az összes kitölthető attribútumot
+            ->logFillable()
+            // Minden esemény naplózása
+            ->logAllEvents();
     }
 }
