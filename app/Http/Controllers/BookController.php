@@ -55,7 +55,7 @@ class BookController extends Controller {
         $roles = $this->getUserRoles();
 
         // 'Books/booksIndex' => 'Books/Index',
-        return Inertia::render('Books/Index', [
+        return Inertia::render('Books/booksIndex', [
             'can' => $roles
         ]);
     }

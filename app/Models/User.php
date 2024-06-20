@@ -36,6 +36,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'language',
     ];
 
     /**
@@ -74,8 +75,13 @@ class User extends Authenticatable
         'language' => 'hu',
     ];
     
-    protected  static $logAttributes = [];
-    protected static $recordEvents = ['inserted', 'updated', 'deleted'];
+    protected  static $logAttributes = [
+        'name',
+        'email',
+        'password',
+        'language',
+    ];
+    protected static $recordEvents = ['created', 'updated', 'deleted'];
     
     public function getActivitylogOptions() : LogOptions {
         return LogOptions::defaults()->logOnly([ self::$logAttributes ]);

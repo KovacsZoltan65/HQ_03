@@ -42,7 +42,7 @@ class Book extends Model
      * @var array<string>
      */
     protected static $recordEvents = [
-        'inserted', // Új könyv beillesztésekor
+        'created', // Új könyv beillesztésekor
         'updated',  // Amikor egy meglévő könyvet frissítenek
         'deleted',  // Amikor egy könyvet törölnek
     ];

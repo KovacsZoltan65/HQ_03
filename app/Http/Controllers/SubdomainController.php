@@ -102,7 +102,7 @@ class SubdomainController extends Controller {
          *
          * @return \Inertia\Response The rendered view.
          */
-        return Inertia::render('Subdomains/Index', [
+        return Inertia::render('Subdomains/SubdomainsIndex', [
             // A szerepkörök adatait a rendszer átadja a nézetnek.
             'can' => $this->_getRoles(),
         ]);
