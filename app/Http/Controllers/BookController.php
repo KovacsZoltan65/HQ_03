@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreBookRequest;
-use App\Http\Requests\UpdateBookRequest;
-use App\Interfaces\BookRepositoryInterface;
 use App\Models\Book;
+use Inertia\Inertia;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
-use Inertia\Inertia;
+use App\Http\Requests\StoreBookRequest;
+use App\Http\Requests\UpdateBookRequest;
+use App\Interfaces\BookRepositoryInterface;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class BookController extends Controller {
 
@@ -148,7 +149,8 @@ class BookController extends Controller {
      *
      * @throws \BadMethodCallException
      */
-    public function show() {
+    public function show()
+    {
         throw new \BadMethodCallException('Not implemented.');
     }
 
@@ -202,7 +204,7 @@ class BookController extends Controller {
      * @throws \Illuminate\Database\Eloquent\ModelNotFoundException Ha nem található megfelelő puha törölt könyv.
      */
     public function restore(int $id) {
-        try{
+        try {
             /**
              * Keresse meg a puha törölt könyvet az azonosítója alapján, vagy dobjon kivételt, ha nem található.
              *
@@ -222,7 +224,7 @@ class BookController extends Controller {
              * @throws Illuminate\Database\Eloquent\ModelNotFoundException Ha nem található megfelelő puha törölt könyv.
              */
             $book = Book::onlyTrashed()->findOrFail($id);
-        }catch( \Illuminate\Database\Eloquent\ModelNotFoundException $e ){
+        } catch( ModelNotFoundException $e ) {
             /**
              * Lekér egy lokalizált üzenetláncot a 'books_not_found' kifejezéshez.
              *
@@ -282,12 +284,6 @@ class BookController extends Controller {
         return redirect()->back()->with('message', __('books_restored'));
     }
 
-    /**
-     * Szerezze meg az autentikált felhasználó szerepeit.
-     *
-     * @return array
-     */
-    
     /**
      * Megszerzi a jelenlegi felhasználó könyvműveletekhez kapcsolódó engedélyeit.
      *

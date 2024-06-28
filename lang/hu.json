@@ -153,6 +153,7 @@
     "books_delete": "Könyv törlése",
     "books_deleted": "A könyv törölve",
     "books_delete_confirmation": "Biztosan törli ezt a könyvet?",
+    "books_restored": "A könyv visszaállítása megtörtént.",
     "books_search_placeholder": "Keress a könyvek között cím vagy szerző szerint...",
     "books_not_found": "A keresett könyv nem található",
 
@@ -205,7 +206,7 @@
     
     "back_to_list": "Vissza a listához",
     
-    "required": "A(z) :attribute megadása kötelező!",
-    "url": "A(z) :attribute érvénytelen link.",
-    "integer": "A(z) :attribute értéke szám kell, hogy legyen!"
+    "validation.required": "A(z) :attribute megadása kötelező!",
+    "validation.url": "A(z) :attribute érvénytelen link.",
+    "validation.integer": "A(z) :attribute értéke szám kell, hogy legyen!"
 }
