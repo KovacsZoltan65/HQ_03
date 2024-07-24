@@ -6,6 +6,7 @@ use App\Http\Requests\StoreSubdomainRequest;
 use App\Http\Requests\UpdateSubdomainRequest;
 use App\Interfaces\SubdomainRepositoryInterface;
 use App\Models\Subdomain;
+use App\Traits\Database;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
@@ -13,6 +14,8 @@ use Inertia\Inertia;
 
 class SubdomainController extends Controller {
 
+    use Database;
+    
     private $repository;
 
     /**
@@ -213,6 +216,14 @@ class SubdomainController extends Controller {
      * Show the form for editing the specified resource.
      */
     public function edit(Subdomain $subdomain) {
+        
+        //$subdomain = $this->createDatabase(1);
+        //dd(
+        //    $subdomain->db_name,
+        //    $subdomain->db_user,
+        //    $subdomain->db_password
+        //);
+        
         return Inertia::render('Subdomains/SubdomainsEdit', [
                 'subdomain' => $subdomain,
                 'can' => $this->_getRoles(),
