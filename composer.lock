@@ -5972,6 +5972,7 @@
         },
         {
             "name": "symfony/string",
+<<<<<<< HEAD
             "version": "v6.4.9",
             "source": {
                 "type": "git",
@@ -5982,6 +5983,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/string/zipball/76792dbd99690a5ebef8050d9206c60c59e681d7",
                 "reference": "76792dbd99690a5ebef8050d9206c60c59e681d7",
+=======
+            "version": "v7.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/string.git",
+                "reference": "14221089ac66cf82e3cf3d1c1da65de305587ff8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/string/zipball/14221089ac66cf82e3cf3d1c1da65de305587ff8",
+                "reference": "14221089ac66cf82e3cf3d1c1da65de305587ff8",
+>>>>>>> e749f0bc4a9baa08d64718f92d73106bc935ba33
                 "shasum": ""
             },
             "require": {
@@ -6038,7 +6051,11 @@
                 "utf8"
             ],
             "support": {
+<<<<<<< HEAD
                 "source": "https://github.com/symfony/string/tree/v6.4.9"
+=======
+                "source": "https://github.com/symfony/string/tree/v7.1.2"
+>>>>>>> e749f0bc4a9baa08d64718f92d73106bc935ba33
             },
             "funding": [
                 {
@@ -6054,7 +6071,11 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
             "time": "2024-06-28T09:25:38+00:00"
+=======
+            "time": "2024-06-28T09:27:18+00:00"
+>>>>>>> e749f0bc4a9baa08d64718f92d73106bc935ba33
         },
         {
             "name": "symfony/translation",
@@ -8273,6 +8294,7 @@
         },
         {
             "name": "phpunit/phpunit",
+<<<<<<< HEAD
             "version": "10.5.28",
             "source": {
                 "type": "git",
@@ -8283,6 +8305,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/ff7fb85cdf88131b83e721fb2a327b664dbed275",
                 "reference": "ff7fb85cdf88131b83e721fb2a327b664dbed275",
+=======
+            "version": "10.5.27",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/phpunit.git",
+                "reference": "2425f713b2a5350568ccb1a2d3984841a23e83c5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/2425f713b2a5350568ccb1a2d3984841a23e83c5",
+                "reference": "2425f713b2a5350568ccb1a2d3984841a23e83c5",
+>>>>>>> e749f0bc4a9baa08d64718f92d73106bc935ba33
                 "shasum": ""
             },
             "require": {
@@ -8354,7 +8388,11 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
+<<<<<<< HEAD
                 "source": "https://github.com/sebastianbergmann/phpunit/tree/10.5.28"
+=======
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.5.27"
+>>>>>>> e749f0bc4a9baa08d64718f92d73106bc935ba33
             },
             "funding": [
                 {
@@ -8370,7 +8408,11 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
             "time": "2024-07-18T14:54:16+00:00"
+=======
+            "time": "2024-07-10T11:48:06+00:00"
+>>>>>>> e749f0bc4a9baa08d64718f92d73106bc935ba33
         },
         {
             "name": "psr/cache",
@@ -9518,6 +9560,7 @@
         },
         {
             "name": "spatie/error-solutions",
+<<<<<<< HEAD
             "version": "1.1.0",
             "source": {
                 "type": "git",
@@ -9528,6 +9571,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/spatie/error-solutions/zipball/a014da18f2675ea15af0ba97f7e9aee59e13964f",
                 "reference": "a014da18f2675ea15af0ba97f7e9aee59e13964f",
+=======
+            "version": "1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/error-solutions.git",
+                "reference": "4bb6c734dc992b2db3e26df1ef021c75d2218b13"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/error-solutions/zipball/4bb6c734dc992b2db3e26df1ef021c75d2218b13",
+                "reference": "4bb6c734dc992b2db3e26df1ef021c75d2218b13",
+>>>>>>> e749f0bc4a9baa08d64718f92d73106bc935ba33
                 "shasum": ""
             },
             "require": {
@@ -9580,7 +9635,11 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/error-solutions/issues",
+<<<<<<< HEAD
                 "source": "https://github.com/spatie/error-solutions/tree/1.1.0"
+=======
+                "source": "https://github.com/spatie/error-solutions/tree/1.0.5"
+>>>>>>> e749f0bc4a9baa08d64718f92d73106bc935ba33
             },
             "funding": [
                 {
@@ -9588,7 +9647,11 @@
                     "type": "github"
                 }
             ],
+<<<<<<< HEAD
             "time": "2024-07-22T08:18:22+00:00"
+=======
+            "time": "2024-07-09T12:13:32+00:00"
+>>>>>>> e749f0bc4a9baa08d64718f92d73106bc935ba33
         },
         {
             "name": "spatie/flare-client-php",

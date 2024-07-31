@@ -39,26 +39,30 @@ class Subdomain extends Model
     use HasFactory, 
         SoftDeletes;
     
-	protected $table = 'subdomains';
+    protected $table = 'subdomains';
 
-	protected $casts = [
-		              'db_port' => 'int',
-		         'notification' => 'bool',
-		             'state_id' => 'int',
-		            'is_mirror' => 'bool',
-		                  'sso' => 'bool',
-		'access_control_system' => 'int',
-		          'last_export' => 'datetime'
-	];
+    protected $casts = [
+                          'db_port' => 'int',
+                     'notification' => 'bool',
+                         'state_id' => 'int',
+                        'is_mirror' => 'bool',
+                              'sso' => 'bool',
+            'access_control_system' => 'int',
+                      'last_export' => 'datetime'
+    ];
 
-	//protected $hidden = [
-	//	'db_password'
-	//];
+    //protected $hidden = [
+    //	'db_password'
+    //];
 
-	protected $fillable = [
-		'subdomain', 'url', 'name',
-		'db_host', 'db_port', 'db_name', 'db_user', 'db_password',
-		'notification', 'state_id', 'is_mirror', 'sso',
-		'access_control_system', 'last_export'
-	];
+    protected $fillable = [
+            'subdomain', 'url', 'name',
+            'db_host', 'db_port', 'db_name', 'db_user', 'db_password',
+            'notification', 'state_id', 'is_mirror', 'sso',
+            'access_control_system', 'last_export'
+    ];
+    
+    public static function getSubdomainById(int $subdomain_id) {
+        return self::where('id', $subdomain_id)->first();
+    }
 }
