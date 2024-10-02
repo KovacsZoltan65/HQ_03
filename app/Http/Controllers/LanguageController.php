@@ -2,19 +2,6 @@
 
 namespace App\Http\Controllers;
 
-/*
-class LanguageController extends Controller {
-
-    public function index() {
-        $locale = request()->get('locale');
-        app()->setLocale($locale);
-        session()->put('locale', $locale);
-
-        return redirect()->back();
-    }
-}
-*/
-
 use Illuminate\Http\Request;
 
 class LanguageController extends Controller
@@ -49,18 +36,18 @@ class LanguageController extends Controller
         if ($this->isLocaleSupported($locale)) {
             app()->setLocale($locale);
 
-            // Store the locale in the session.
+            // Tárolja a nyelvi beállítást a munkamenetben.
             $request->session()->put('locale', $locale);
         }
 
-        // Redirect the user back to the previous page.
+        // A felhasználó visszairányítása az előző oldalra.
         return redirect()->back();
     }
 
     /**
-     * Check if the given locale is supported by the application.
+     * Ellenőrizze, hogy az adott területet támogatja-e az alkalmazás.
      *
-     * @param string $locale The locale to check.
+     * @param string $locale Az ellenőrizendő terület.
      * @return bool
      */
     protected function isLocaleSupported($locale)
