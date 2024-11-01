@@ -18,3 +18,5 @@ yarn-error.log
 /.idea
 /.vscode
 /nbproject
+composer.lock
+package.lock
